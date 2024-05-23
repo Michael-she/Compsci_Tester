@@ -166,6 +166,7 @@ def main():
             
 
             print("=========RESULT=========")
+            
             if str(counter) in failed_test_cases or compare_outputs(script_output, read_input(expected_path)) == False:
                 print("Match: FAILURE")
                 action = "Boo"
@@ -180,7 +181,7 @@ def main():
                         open_expected_output(expected_path)
                         action = input()
 
-                    while action == 'r':
+                    if action == 'r':
                         print("again!")
                         script_output = run_script(args, input_path)
                 
